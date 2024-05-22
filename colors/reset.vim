@@ -15,16 +15,16 @@
 " along with this program.  If not, see <https://www.gnu.org/licenses/>.
 hi clear
 if exists("syntax_on")
-	syntax reset
+    syntax reset
 endif
 
 let g:colors_name = 'reset'
 
 " help highlight-groups
 if &background == "dark"
-	hi Normal gui=NONE guibg=NONE guifg=#e3dede
+    hi Normal gui=NONE guibg=NONE guifg=#e3dede
 elseif &background == "light"
-	hi Normal gui=NONE guibg=NONE guifg=#333333
+    hi Normal gui=NONE guibg=NONE guifg=#333333
 endif
 
 hi Visual gui=NONE guibg=#E7DA86 guibg=#333333
@@ -67,18 +67,18 @@ hi DiagnosticFloatingWarn gui=standout guibg=NONE guifg=NONE
 hi DiagnosticFloatingError gui=standout guibg=NONE guifg=NONE
 
 " {{{ Cmp
-	hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrMatch gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrMatchFuzzy gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemKind gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemMenu gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrDeprecatedDefault gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrMatchDefault gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemAbbrMatchFuzzyDefault gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemKindDefault gui=NONE guibg=NONE guifg=NONE
-	hi CmpItemMenuDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrMatch gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrMatchFuzzy gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemKind gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemMenu gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrDeprecatedDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrMatchDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemAbbrMatchFuzzyDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemKindDefault gui=NONE guibg=NONE guifg=NONE
+    hi CmpItemMenuDefault gui=NONE guibg=NONE guifg=NONE
 " }}}
 
 hi NonText gui=bold guibg=NONE guifg=NONE
