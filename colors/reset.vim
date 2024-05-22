@@ -28,9 +28,9 @@ elseif &background == "light"
 endif
 
 hi Visual gui=NONE guibg=#e7da86 guifg=#333333
-hi VisualNOC gui=bold guifg=#333333
+hi VisualNOS gui=bold guifg=#333333
 hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333
-hi IncSearch gui=bold gui=NONE
+hi IncSearch gui=bold guifg=NONE
 hi Search gui=bold guibg=yellow guifg=#333333
 
 hi NoBackground guibg=NONE
@@ -97,18 +97,18 @@ hi Keyword gui=None guibg=NONE guifg=NONE
 hi Number gui=None guibg=NONE guifg=NONE
 hi Char gui=None guibg=NONE guifg=NONE
 hi Format gui=None guibg=NONE guifg=NONE
-hi Special gui=underline guibg=NONE guifg=NONE
+hi Special gui=NONE guibg=NONE guifg=NONE
 hi Constant gui=None guibg=NONE guifg=NONE
 hi PreProc gui=None guifg=NONE
 hi Directive gui=NONE guibg=NONE guifg=NONE
 hi Conditional gui=NONE guibg=NONE guifg=NONE
 hi Comment gui=italic guibg=NONE guifg=grey
-hi Func gui=None guibg=NONE guifg=NONE
+hi Func gui=NONE guibg=NONE guifg=NONE
 hi Function gui=None guibg=NONE guifg=NONE
 hi Identifier gui=NONE guibg=NONE guifg=NONE
 hi Statement gui=bold guibg=NONE guifg=NONE
 hi Ignore gui=bold guifg=NONE
-hi String term=bold,italic guifg=NONE
+hi String gui=bold,italic guifg=NONE
 hi Conceal gui=NONE guibg=NONE guifg=NONE
 hi ErrorMsg gui=reverse guibg=NONE guifg=NONE
 hi Error gui=reverse guibg=NONE guifg=NONE
