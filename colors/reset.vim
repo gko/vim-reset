@@ -27,9 +27,9 @@ elseif &background == "light"
     hi Normal gui=NONE guibg=NONE guifg=#333333
 endif
 
-hi Visual gui=NONE guibg=#E7DA86 guibg=#333333
+hi Visual gui=NONE guibg=#e7da86 guifg=#333333
 hi VisualNOC gui=bold guifg=#333333
-hi QuickFixLine gui=NONE guibg=#E7DA86 guifg=#333333
+hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333
 hi IncSearch gui=bold gui=NONE
 hi Search gui=bold guibg=yellow guifg=#333333
 
@@ -104,8 +104,9 @@ hi Directive gui=NONE guibg=NONE guifg=NONE
 hi Conditional gui=NONE guibg=NONE guifg=NONE
 hi Comment gui=italic guibg=NONE guifg=grey
 hi Func gui=None guibg=NONE guifg=NONE
+hi Function gui=None guibg=NONE guifg=NONE
 hi Identifier gui=NONE guibg=NONE guifg=NONE
-hi Statement gui=NONE guibg=NONE guifg=NONE
+hi Statement gui=bold guibg=NONE guifg=NONE
 hi Ignore gui=bold guifg=NONE
 hi String term=bold,italic guifg=NONE
 hi Conceal gui=NONE guibg=NONE guifg=NONE
