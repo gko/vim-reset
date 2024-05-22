@@ -47,7 +47,7 @@ hi CursorLine gui=NONE guibg=NONE guifg=NONE
 hi CursorLineNr gui=bold guibg=NONE guifg=NONE
 hi CursorColumn gui=NONE guibg=NONE guifg=NONE
 
-hi reverseStatusLine gui=bold,reverse guifg=NONE
+hi StatusLine gui=bold,reverse guibg=NONE guifg=NONE
 hi StatusLineNC gui=reverse guifg=NONE
 
 hi TabLine gui=NONE guibg=NONE guifg=NONE
