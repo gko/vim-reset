@@ -16,6 +16,11 @@ Then you can apply it by running:
 colorscheme reset
 ```
 
+Supports both `light` and `dark` backgrounds, i.e.:
+```vimscript
+set background=dark
+```
+
 ## Customization
 
 You can customize the background and foreground colors by modifying the Normal highlight color group. For example:
