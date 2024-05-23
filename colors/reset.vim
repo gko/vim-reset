@@ -142,97 +142,97 @@ endif
 " }}}
 
 if &background == "dark"
-    hi Normal gui=NONE guibg=black guifg=#e3dede cterm=NONE ctermbg=black ctermfg=white
+    hi Normal guibg=black guifg=#e3dede cterm=NONE ctermbg=black ctermfg=white
 elseif &background == "light"
-    hi Normal gui=NONE guibg=white guifg=#333333 cterm=NONE ctermbg=white ctermfg=black
+    hi Normal guibg=white guifg=#333333 cterm=NONE ctermbg=white ctermfg=black
 endif
 
-hi Visual gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
+hi Visual guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
-hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
-hi IncSearch gui=bold guifg=NONE cterm=bold ctermfg=NONE
+hi QuickFixLine guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
+hi IncSearch gui=bold cterm=bold ctermfg=NONE
 hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 
-hi NoBackground guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi SpecialKey gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi MoreMsg gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi ModeMsg gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi MsgArea gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi LineNr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi SignColumn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+hi NoBackground ctermbg=NONE
+hi EndOfBuffer ctermbg=NONE
+hi SpecialKey gui=bold cterm=bold ctermfg=NONE
+hi MoreMsg gui=bold cterm=bold ctermfg=NONE
+hi ModeMsg gui=bold cterm=bold ctermfg=NONE
+hi MsgArea cterm=NONE ctermbg=NONE ctermfg=NONE
+hi LineNr cterm=NONE ctermbg=NONE ctermfg=NONE
+hi SignColumn cterm=NONE ctermbg=NONE ctermfg=NONE
 
-hi Cursor gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi CursorLine gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi CursorLineNr gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi CursorColumn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Cursor cterm=NONE ctermbg=NONE ctermfg=NONE
+hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
+hi CursorLineNr gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE
 
-hi StatusLine gui=bold,reverse guibg=NONE guifg=NONE cterm=bold,reverse ctermbg=NONE ctermfg=NONE
-hi StatusLineNC gui=reverse guifg=NONE cterm=reverse ctermfg=NONE
+hi StatusLine gui=bold,reverse cterm=bold,reverse ctermbg=NONE ctermfg=NONE
+hi StatusLineNC gui=reverse cterm=reverse ctermfg=NONE
 
-hi TabLine gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi TabLineFill gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi TabLineSel gui=bold,reverse guibg=NONE guifg=NONE cterm=bold,reverse ctermbg=NONE ctermfg=NONE
+hi TabLine cterm=NONE ctermbg=NONE ctermfg=NONE
+hi TabLineFill cterm=NONE ctermbg=NONE ctermfg=NONE
+hi TabLineSel gui=bold,reverse cterm=bold,reverse ctermbg=NONE ctermfg=NONE
 
 " https://vi.stackexchange.com/a/12665
-hi Pmenu gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi PmenuKind gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi PmenuExtra gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi PmenuSel gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
+hi Pmenu gui=reverse cterm=reverse ctermbg=NONE ctermfg=NONE
+hi PmenuKind cterm=NONE ctermbg=NONE ctermfg=NONE
+hi PmenuExtra cterm=NONE ctermbg=NONE ctermfg=NONE
+hi PmenuSel gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
 
-hi DiagnosticFloatingOk gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingInfo gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingHint gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingWarn gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingError gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
+hi DiagnosticFloatingOk gui=standout cterm=standout ctermbg=NONE ctermfg=NONE
+hi DiagnosticFloatingInfo gui=standout cterm=standout ctermbg=NONE ctermfg=NONE
+hi DiagnosticFloatingHint gui=standout cterm=standout ctermbg=NONE ctermfg=NONE
+hi DiagnosticFloatingWarn gui=standout cterm=standout ctermbg=NONE ctermfg=NONE
+hi DiagnosticFloatingError gui=standout cterm=standout ctermbg=NONE ctermfg=NONE
 
 " {{{ Cmp
-    hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatch gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchFuzzy gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemKind gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemMenu gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDeprecatedDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchFuzzyDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemKindDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemMenuDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbr cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrDeprecated cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrMatch cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrMatchFuzzy cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemKind cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemMenu cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrDefault cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrDeprecatedDefault cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrMatchDefault cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemAbbrMatchFuzzyDefault cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemKindDefault cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi CmpItemMenuDefault cterm=NONE ctermbg=NONE ctermfg=NONE
 " }}}
 
-hi NonText gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi VertSplit gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Title gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi WarningMsg gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi WildMenu gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi Folded gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi FoldColumn gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi DiffAdd gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffChange gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffDelete gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffText gui=reverse guifg=NONE cterm=reverse ctermfg=NONE
-hi Type gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Keyword gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Number gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Char gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Format gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Special gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Constant gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi PreProc gui=None guifg=NONE cterm=None ctermfg=NONE
-hi Directive gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Conditional gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Comment gui=italic guibg=NONE guifg=grey cterm=italic ctermbg=NONE ctermfg=grey
-hi Func gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Function gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Identifier gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Statement gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Ignore gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi String gui=bold,italic guifg=NONE cterm=bold,italic ctermfg=NONE
-hi Conceal gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi ErrorMsg gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi Error gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi Todo gui=bold,standout guibg=NONE guifg=NONE cterm=bold,standout ctermbg=NONE ctermfg=NONE
-hi MatchParen gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Directory gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi ColorColumn guifg=NONE ctermfg=NONE
+hi NonText gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi VertSplit cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Title gui=bold cterm=bold ctermfg=NONE
+hi WarningMsg gui=standout cterm=standout ctermfg=NONE
+hi WildMenu gui=standout cterm=standout ctermfg=NONE
+hi Folded gui=standout cterm=standout ctermfg=NONE
+hi FoldColumn gui=standout cterm=standout ctermfg=NONE
+hi DiffAdd gui=bold cterm=bold ctermfg=NONE
+hi DiffChange gui=bold cterm=bold ctermfg=NONE
+hi DiffDelete gui=bold cterm=bold ctermfg=NONE
+hi DiffText gui=reverse cterm=reverse ctermfg=NONE
+hi Type gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi Keyword gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi Number gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi Char gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi Format gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi Special cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Constant gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi PreProc gui=None cterm=None ctermfg=NONE
+hi Directive cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Conditional cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Comment gui=italic guifg=grey cterm=italic ctermbg=NONE ctermfg=grey
+hi Func cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Function gui=None cterm=None ctermbg=NONE ctermfg=NONE
+hi Identifier cterm=NONE ctermbg=NONE ctermfg=NONE
+hi Statement gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi Ignore gui=bold cterm=bold ctermfg=NONE
+hi String gui=bold,italic cterm=bold,italic ctermfg=NONE
+hi Conceal cterm=NONE ctermbg=NONE ctermfg=NONE
+hi ErrorMsg gui=reverse cterm=reverse ctermbg=NONE ctermfg=NONE
+hi Error gui=reverse cterm=reverse ctermbg=NONE ctermfg=NONE
+hi Todo gui=bold,standout cterm=bold,standout ctermbg=NONE ctermfg=NONE
+hi MatchParen gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi Directory gui=bold cterm=bold ctermbg=NONE ctermfg=NONE
+hi ColorColumn ctermfg=NONE
