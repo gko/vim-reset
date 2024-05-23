@@ -59,6 +59,8 @@ endif
     hi DiagnosticFloatingOk gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiagnosticFloatingWarn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffAdd gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi diffAdded gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi diffRemoved gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffChange gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffDelete gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffText gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -142,97 +144,82 @@ endif
 " }}}
 
 if &background == "dark"
-    hi Normal gui=NONE guibg=black guifg=#e3dede cterm=NONE ctermbg=black ctermfg=white
+    hi Normal guibg=black guifg=#e3dede  ctermbg=black ctermfg=white
+
+    hi DiffAdd guibg=#22863a guifg=white ctermbg=29 ctermfg=15
+    hi DiffChange guibg=#233524 guifg=white ctermbg=89 ctermfg=15
+    hi DiffDelete guibg=#7d2a2f guifg=white ctermbg=52 ctermfg=15
+    hi DiffText gui=bold guifg=#f2e496 cterm=bold ctermfg=222
 elseif &background == "light"
-    hi Normal gui=NONE guibg=white guifg=#333333 cterm=NONE ctermbg=white ctermfg=black
+    hi Normal guibg=white guifg=#333333  ctermbg=white ctermfg=black
+
+    hi DiffAdd guibg=#e6ffed guifg=#22863a ctermbg=85 ctermfg=29
+    hi DiffChange guibg=#fffbdd ctermbg=230
+    hi DiffDelete guibg=#ffeef0 guifg=#babbbc ctermbg=167 ctermfg=250
+    hi DiffText gui=bold guibg=#f2e496 cterm=bold ctermbg=222
 endif
 
-hi Visual gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
+hi link diffAdded DiffAdd
+hi link diffRemoved DiffDelete
+
+hi Comment guifg=grey ctermfg=grey
+hi String gui=bold cterm=bold
+if italic_supported == 1
+    hi Comment gui=italic cterm=italic
+    hi String gui=bold,italic cterm=bold,italic
+endif
+
+hi Visual guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
-hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
-hi IncSearch gui=bold guifg=NONE cterm=bold ctermfg=NONE
+hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
+hi IncSearch gui=bold cterm=bold
 hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 
-hi NoBackground guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi SpecialKey gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi MoreMsg gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi ModeMsg gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi MsgArea gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi LineNr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi SignColumn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+hi SpecialKey gui=bold cterm=bold
+hi MoreMsg gui=bold cterm=bold
+hi ModeMsg gui=bold cterm=bold
 
-hi Cursor gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi CursorLine gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi CursorLineNr gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi CursorColumn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+hi CursorLineNr gui=bold cterm=bold
 
-hi StatusLine gui=bold,reverse guibg=NONE guifg=NONE cterm=bold,reverse ctermbg=NONE ctermfg=NONE
-hi StatusLineNC gui=reverse guifg=NONE cterm=reverse ctermfg=NONE
+hi StatusLine gui=bold,reverse cterm=bold,reverse
+hi StatusLineNC gui=reverse cterm=reverse
 
-hi TabLine gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi TabLineFill gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi TabLineSel gui=bold,reverse guibg=NONE guifg=NONE cterm=bold,reverse ctermbg=NONE ctermfg=NONE
+hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
 " https://vi.stackexchange.com/a/12665
-hi Pmenu gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi PmenuKind gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi PmenuExtra gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi PmenuSel gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
+hi Pmenu gui=reverse cterm=reverse
+hi PmenuSel gui=bold,reverse cterm=bold,reverse
+hi PmenuSbar gui=reverse cterm=reverse
+hi PmenuThumb guibg=grey ctermbg=grey
 
-hi DiagnosticFloatingOk gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingInfo gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingHint gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingWarn gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
-hi DiagnosticFloatingError gui=standout guibg=NONE guifg=NONE cterm=standout ctermbg=NONE ctermfg=NONE
+hi link CocMenuSel PmenuSel
+hi link CocFloatSbar PmenuSbar
+hi link CocFloatThumb PmenuThumb
 
-" {{{ Cmp
-    hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatch gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchFuzzy gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemKind gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemMenu gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrDeprecatedDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemAbbrMatchFuzzyDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemKindDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-    hi CmpItemMenuDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-" }}}
+hi DiagnosticFloatingOk gui=standout cterm=standout
+hi DiagnosticFloatingInfo gui=standout cterm=standout
+hi DiagnosticFloatingHint gui=standout cterm=standout
+hi DiagnosticFloatingWarn gui=standout cterm=standout
+hi DiagnosticFloatingError gui=standout cterm=standout
 
-hi NonText gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi VertSplit gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Title gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi WarningMsg gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi WildMenu gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi Folded gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi FoldColumn gui=standout guifg=NONE cterm=standout ctermfg=NONE
-hi DiffAdd gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffChange gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffDelete gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi DiffText gui=reverse guifg=NONE cterm=reverse ctermfg=NONE
-hi Type gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Keyword gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Number gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Char gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Format gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Special gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Constant gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi PreProc gui=None guifg=NONE cterm=None ctermfg=NONE
-hi Directive gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Conditional gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Comment gui=italic guibg=NONE guifg=grey cterm=italic ctermbg=NONE ctermfg=grey
-hi Func gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Function gui=None guibg=NONE guifg=NONE cterm=None ctermbg=NONE ctermfg=NONE
-hi Identifier gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi Statement gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Ignore gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi String gui=bold,italic guifg=NONE cterm=bold,italic ctermfg=NONE
-hi Conceal gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-hi ErrorMsg gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi Error gui=reverse guibg=NONE guifg=NONE cterm=reverse ctermbg=NONE ctermfg=NONE
-hi Todo gui=bold,standout guibg=NONE guifg=NONE cterm=bold,standout ctermbg=NONE ctermfg=NONE
-hi MatchParen gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi Directory gui=bold guibg=NONE guifg=NONE cterm=bold ctermbg=NONE ctermfg=NONE
-hi ColorColumn guifg=NONE ctermfg=NONE
+hi NonText gui=bold cterm=bold
+hi Title gui=bold cterm=bold
+hi WarningMsg gui=standout cterm=standout
+hi WildMenu gui=standout cterm=standout
+hi Folded gui=standout cterm=standout
+" hi FoldColumn gui=standout cterm=standout
+hi Type gui=bold cterm=bold
+hi Keyword gui=None cterm=None
+hi Number gui=None cterm=None
+hi Char gui=None cterm=None
+hi Format gui=None cterm=None
+hi Constant gui=None cterm=None
+hi PreProc gui=None cterm=None
+hi Function gui=None cterm=None
+hi Statement gui=bold cterm=bold
+hi Ignore gui=bold cterm=bold
+hi ErrorMsg gui=reverse cterm=reverse
+hi Error gui=reverse cterm=reverse
+hi Todo gui=bold,standout cterm=bold,standout
+hi MatchParen gui=bold cterm=bold
+hi Directory gui=bold cterm=bold
