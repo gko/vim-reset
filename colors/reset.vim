@@ -19,19 +19,127 @@ if exists("syntax_on")
 endif
 
 let g:colors_name = 'reset'
+let italic_supported = 0
+let bold_supported = 0
+
+if has("nvim") || &t_ZH == "\e[3m"
+    let italic_supported = 1
+endif
+
+if has("nvim") || &t_md != ""
+    let bold_supported = 1
+endif
+
+hi ResetHighlightGroup gui=NONE guibg=NONE guibg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+
+" {{{ Reset
+    hi link ColorColumn ResetHighlightGroup
+    hi link Conceal ResetHighlightGroup
+    hi link CurSearch ResetHighlightGroup
+    hi link Cursor ResetHighlightGroup
+    hi link CursorColumn ResetHighlightGroup
+    hi link CursorIM ResetHighlightGroup
+    hi link CursorLine ResetHighlightGroup
+    hi link CursorLineFold ResetHighlightGroup
+    hi link CursorLineNr ResetHighlightGroup
+    hi link CursorLineSign ResetHighlightGroup
+    hi link DiffAdd ResetHighlightGroup
+    hi link DiffChange ResetHighlightGroup
+    hi link DiffDelete ResetHighlightGroup
+    hi link DiffText ResetHighlightGroup
+    hi link Directory ResetHighlightGroup
+    hi link EndOfBuffer ResetHighlightGroup
+    hi link ErrorMsg ResetHighlightGroup
+    hi link FloatBorder ResetHighlightGroup
+    hi link FloatFooter ResetHighlightGroup
+    hi link FloatTitle ResetHighlightGroup
+    hi link FoldColumn ResetHighlightGroup
+    hi link Folded ResetHighlightGroup
+    hi link IncSearch ResetHighlightGroup
+    hi link LineNr ResetHighlightGroup
+    hi link LineNrAbove ResetHighlightGroup
+    hi link LineNrBelow ResetHighlightGroup
+    hi link MatchParen ResetHighlightGroup
+    hi link Menu ResetHighlightGroup
+    hi link ModeMsg ResetHighlightGroup
+    hi link MoreMsg ResetHighlightGroup
+    hi link MsgArea ResetHighlightGroup
+    hi link MsgSeparator ResetHighlightGroup
+    hi link NonText ResetHighlightGroup
+    hi link Normal ResetHighlightGroup
+    hi link NormalFloat ResetHighlightGroup
+    hi link NormalNC ResetHighlightGroup
+    hi link Pmenu ResetHighlightGroup
+    hi link PmenuExtra ResetHighlightGroup
+    hi link PmenuExtraSel ResetHighlightGroup
+    hi link PmenuKind ResetHighlightGroup
+    hi link PmenuKindSel ResetHighlightGroup
+    hi link PmenuSbar ResetHighlightGroup
+    hi link PmenuSel ResetHighlightGroup
+    hi link PmenuThumb ResetHighlightGroup
+    hi link Question ResetHighlightGroup
+    hi link QuickFixLine ResetHighlightGroup
+    hi link Scrollbar ResetHighlightGroup
+    hi link Search ResetHighlightGroup
+    hi link SignColumn ResetHighlightGroup
+    hi link SnippetTabstop ResetHighlightGroup
+    hi link SpecialKey ResetHighlightGroup
+    hi link SpellBad ResetHighlightGroup
+    hi link SpellCap ResetHighlightGroup
+    hi link SpellLocal ResetHighlightGroup
+    hi link SpellRare ResetHighlightGroup
+    hi link StatusLine ResetHighlightGroup
+    hi link StatusLineNC ResetHighlightGroup
+    hi link Substitute ResetHighlightGroup
+    hi link TabLine ResetHighlightGroup
+    hi link TabLineFill ResetHighlightGroup
+    hi link TabLineSel ResetHighlightGroup
+    hi link TermCursor ResetHighlightGroup
+    hi link TermCursorNC ResetHighlightGroup
+    hi link Title ResetHighlightGroup
+    hi link Tooltip ResetHighlightGroup
+    hi link Visual ResetHighlightGroup
+    hi link VisualNOS ResetHighlightGroup
+    hi link WarningMsg ResetHighlightGroup
+    hi link Whitespace ResetHighlightGroup
+    hi link WildMenu ResetHighlightGroup
+    hi link WinBar ResetHighlightGroup
+    hi link WinBarNC ResetHighlightGroup
+    hi link WinSeparator ResetHighlightGroup
+    hi link lCursor ResetHighlightGroup
+
+    hi link DiagnosticFloatingOk ResetHighlightGroup
+    hi link DiagnosticFloatingInfo ResetHighlightGroup
+    hi link DiagnosticFloatingHint ResetHighlightGroup
+    hi link DiagnosticFloatingWarn ResetHighlightGroup
+    hi link DiagnosticFloatingError ResetHighlightGroup
+
+    hi link CmpItemAbbr ResetHighlightGroup
+    hi link CmpItemAbbrDefault ResetHighlightGroup
+    hi link CmpItemAbbrDeprecated ResetHighlightGroup
+    hi link CmpItemAbbrDeprecatedDefault ResetHighlightGroup
+    hi link CmpItemAbbrMatch ResetHighlightGroup
+    hi link CmpItemAbbrMatchDefault ResetHighlightGroup
+    hi link CmpItemAbbrMatchFuzzy ResetHighlightGroup
+    hi link CmpItemAbbrMatchFuzzyDefault ResetHighlightGroup
+    hi link CmpItemKind ResetHighlightGroup
+    hi link CmpItemKindDefault ResetHighlightGroup
+    hi link CmpItemMenu ResetHighlightGroup
+    hi link CmpItemMenuDefault ResetHighlightGroup
+" }}}
 
 " help highlight-groups
 if &background == "dark"
-    hi Normal gui=NONE guibg=NONE guifg=#e3dede cterm=NONE ctermbg=NONE ctermfg=white
+    hi Normal gui=NONE guibg=black guifg=#e3dede cterm=NONE ctermbg=black ctermfg=white
 elseif &background == "light"
-    hi Normal gui=NONE guibg=NONE guifg=#333333 cterm=NONE ctermbg=NONE ctermfg=black
+    hi Normal gui=NONE guibg=white guifg=#333333 cterm=NONE ctermbg=white ctermfg=black
 endif
 
-hi Visual gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=8
-hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=8
-hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=8
+hi Visual gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
+hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
+hi QuickFixLine gui=NONE guibg=#e7da86 guifg=#333333 cterm=NONE ctermbg=184 ctermfg=black
 hi IncSearch gui=bold guifg=NONE cterm=bold ctermfg=NONE
-hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=8
+hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 
 hi NoBackground guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
