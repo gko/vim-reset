@@ -192,6 +192,10 @@ hi PmenuSel gui=bold,reverse cterm=bold,reverse
 hi PmenuSbar gui=reverse cterm=reverse
 hi PmenuThumb guibg=grey ctermbg=grey
 
+hi link CocMenuSel PmenuSel
+hi link CocFloatSbar PmenuSbar
+hi link CocFloatThumb PmenuThumb
+
 hi DiagnosticFloatingOk gui=standout cterm=standout
 hi DiagnosticFloatingInfo gui=standout cterm=standout
 hi DiagnosticFloatingHint gui=standout cterm=standout
