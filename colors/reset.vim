@@ -143,8 +143,18 @@ endif
 
 if &background == "dark"
     hi Normal guibg=black guifg=#e3dede  ctermbg=black ctermfg=white
+
+    hi DiffAdd guibg=#22863a guifg=white ctermbg=29 ctermfg=15
+    hi DiffChange guibg=#233524 guifg=white ctermbg=89 ctermfg=15
+    hi DiffDelete guibg=#7d2a2f guifg=white ctermbg=52 ctermfg=15
+    hi DiffText gui=bold guifg=#f2e496 cterm=bold ctermfg=222
 elseif &background == "light"
     hi Normal guibg=white guifg=#333333  ctermbg=white ctermfg=black
+
+    hi DiffAdd guibg=#e6ffed guifg=#22863a ctermbg=85 ctermfg=29
+    hi DiffChange guibg=#fffbdd ctermbg=230
+    hi DiffDelete guibg=#ffeef0 guifg=#babbbc ctermbg=167 ctermfg=250
+    hi DiffText gui=bold guibg=#f2e496 cterm=bold ctermbg=222
 endif
 
 hi Comment guifg=grey ctermfg=grey
@@ -173,7 +183,9 @@ hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
 " https://vi.stackexchange.com/a/12665
 hi Pmenu gui=reverse cterm=reverse
-hi PmenuSel gui=bold cterm=bold
+hi PmenuSel gui=bold,reverse cterm=bold,reverse
+hi PmenuSbar gui=reverse cterm=reverse
+hi PmenuThumb guibg=grey ctermbg=grey
 
 hi DiagnosticFloatingOk gui=standout cterm=standout
 hi DiagnosticFloatingInfo gui=standout cterm=standout
@@ -186,11 +198,7 @@ hi Title gui=bold cterm=bold
 hi WarningMsg gui=standout cterm=standout
 hi WildMenu gui=standout cterm=standout
 hi Folded gui=standout cterm=standout
-hi FoldColumn gui=standout cterm=standout
-hi DiffAdd gui=bold cterm=bold
-hi DiffChange gui=bold cterm=bold
-hi DiffDelete gui=bold cterm=bold
-hi DiffText gui=reverse cterm=reverse
+" hi FoldColumn gui=standout cterm=standout
 hi Type gui=bold cterm=bold
 hi Keyword gui=None cterm=None
 hi Number gui=None cterm=None
