@@ -59,6 +59,8 @@ endif
     hi DiagnosticFloatingOk gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiagnosticFloatingWarn gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffAdd gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi diffAdded gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi diffRemoved gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffChange gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffDelete gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiffText gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -156,6 +158,9 @@ elseif &background == "light"
     hi DiffDelete guibg=#ffeef0 guifg=#babbbc ctermbg=167 ctermfg=250
     hi DiffText gui=bold guibg=#f2e496 cterm=bold ctermbg=222
 endif
+
+hi link diffAdded DiffAdd
+hi link diffRemoved DiffDelete
 
 hi Comment guifg=grey ctermfg=grey
 hi String gui=bold cterm=bold
