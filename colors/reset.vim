@@ -147,6 +147,13 @@ elseif &background == "light"
     hi Normal guibg=white guifg=#333333  ctermbg=white ctermfg=black
 endif
 
+hi Comment guifg=grey ctermfg=grey
+hi String gui=bold cterm=bold
+if italic_supported == 1
+    hi Comment gui=italic cterm=italic
+    hi String gui=bold,italic cterm=bold,italic
+endif
+
 hi Visual guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
 hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
@@ -191,11 +198,9 @@ hi Char gui=None cterm=None
 hi Format gui=None cterm=None
 hi Constant gui=None cterm=None
 hi PreProc gui=None cterm=None
-hi Comment gui=italic guifg=grey cterm=italic  ctermfg=grey
 hi Function gui=None cterm=None
 hi Statement gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
-hi String gui=bold,italic cterm=bold,italic
 hi ErrorMsg gui=reverse cterm=reverse
 hi Error gui=reverse cterm=reverse
 hi Todo gui=bold,standout cterm=bold,standout
