@@ -186,6 +186,8 @@ hi StatusLineNC gui=reverse cterm=reverse
 
 hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
+hi NormalFloat gui=reverse cterm=reverse
+hi TelescopeNormal gui=reverse cterm=reverse
 " https://vi.stackexchange.com/a/12665
 hi Pmenu gui=reverse cterm=reverse
 hi PmenuSel gui=bold,reverse cterm=bold,reverse
