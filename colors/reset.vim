@@ -216,14 +216,7 @@ hi WildMenu gui=standout cterm=standout
 hi Folded gui=standout cterm=standout
 " hi FoldColumn gui=standout cterm=standout
 hi Type gui=bold cterm=bold
-hi Keyword gui=None cterm=None
-hi Number gui=None cterm=None
-hi Char gui=None cterm=None
-hi Format gui=None cterm=None
-hi Constant gui=None cterm=None
 hi Operator gui=bold cterm=bold
-hi PreProc gui=None cterm=None
-hi Function gui=None cterm=None
 hi Statement gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
 hi ErrorMsg gui=reverse cterm=reverse
