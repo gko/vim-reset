@@ -179,6 +179,7 @@ hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi IncSearch gui=bold cterm=bold
 hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 hi ColorColumn guibg=grey
+hi TelescopeSelection gui=bold guibg=#e7da86 guifg=#333333 cterm=bold ctermbg=184 ctermfg=black
 
 hi SpecialKey gui=bold cterm=bold
 hi MoreMsg gui=bold cterm=bold
