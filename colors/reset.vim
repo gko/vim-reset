@@ -27,6 +27,10 @@ endif
 
 " help highlight-groups
 " {{{ Reset
+    if has("nvim")
+        hi @variable gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+        hi @lsp gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    endif
     hi Char gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -53,6 +57,7 @@ endif
     hi CursorLineFold gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CursorLineNr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CursorLineSign gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi Delimiter gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiagnosticFloatingError gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiagnosticFloatingHint gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi DiagnosticFloatingInfo gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -96,6 +101,7 @@ endif
     hi NormalFloat gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi NormalNC gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi Number gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi Operator gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi Pmenu gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi PmenuExtra gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi PmenuExtraSel gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -174,6 +180,8 @@ hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
 hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi IncSearch gui=bold cterm=bold
 hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
+hi ColorColumn guibg=grey
+hi TelescopeSelection gui=bold guibg=#e7da86 guifg=#333333 cterm=bold ctermbg=184 ctermfg=black
 
 hi SpecialKey gui=bold cterm=bold
 hi MoreMsg gui=bold cterm=bold
@@ -186,6 +194,8 @@ hi StatusLineNC gui=reverse cterm=reverse
 
 hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
+hi NormalFloat gui=reverse cterm=reverse
+hi TelescopeNormal gui=reverse cterm=reverse
 " https://vi.stackexchange.com/a/12665
 hi Pmenu gui=reverse cterm=reverse
 hi PmenuSel gui=bold,reverse cterm=bold,reverse
@@ -209,13 +219,7 @@ hi WildMenu gui=standout cterm=standout
 hi Folded gui=standout cterm=standout
 " hi FoldColumn gui=standout cterm=standout
 hi Type gui=bold cterm=bold
-hi Keyword gui=None cterm=None
-hi Number gui=None cterm=None
-hi Char gui=None cterm=None
-hi Format gui=None cterm=None
-hi Constant gui=None cterm=None
-hi PreProc gui=None cterm=None
-hi Function gui=None cterm=None
+hi Operator gui=bold cterm=bold
 hi Statement gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
 hi ErrorMsg gui=reverse cterm=reverse
