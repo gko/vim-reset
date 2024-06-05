@@ -1,4 +1,4 @@
-" Vim Reset Colorscheme
+" Vim Reset
 " Copyright (C) 2024  Konstantin Gorodinskii
 
 " This program is free software: you can redistribute it and/or modify
