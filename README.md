@@ -1,12 +1,12 @@
-# Vim Reset Colorscheme
+# Vim Reset
 
-Vim Reset Colorscheme is a minimalist Vim/Neovim colorscheme. The entire theme depends on just two colors from the `Normal` highlight color group(see [Customization](#customization)). By changing just these two colors, you can update the entire theme. By default, it uses the terminal background color.
+Vim Reset is a minimalist Vim/Neovim colorscheme. The entire theme depends on just two colors from the `Normal` highlight color group(see [Customization](#customization)). By changing just these two colors, you can update the entire theme. By default, it uses the terminal background color.
 
 ## Installation
 
 This plugin is compatible with any Vim/Neovim plugin manager. For instance, if you're using `vim-plug`, you can install it like so:
 ```vimscript
-Plug 'gko/vim-reset-colorscheme'
+Plug 'gko/vim-reset'
 ```
 
 ## Usage
