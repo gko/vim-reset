@@ -218,6 +218,7 @@ hi WarningMsg gui=standout cterm=standout
 hi WildMenu gui=standout cterm=standout
 hi Folded gui=standout cterm=standout
 " hi FoldColumn gui=standout cterm=standout
+
 hi Type gui=bold cterm=bold
 hi Operator gui=bold cterm=bold
 hi Statement gui=bold cterm=bold
@@ -227,3 +228,7 @@ hi Error gui=reverse cterm=reverse
 hi Todo gui=bold,standout cterm=bold,standout
 hi MatchParen gui=bold cterm=bold
 hi Directory gui=bold cterm=bold
+
+" {{{ Language specific
+    hi rustKeyword gui=bold cterm=bold
+" }}}
