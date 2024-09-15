@@ -157,7 +157,7 @@ if &background == "dark"
     hi DiffDelete guibg=#7d2a2f guifg=white ctermbg=52 ctermfg=15
     hi DiffText gui=bold guifg=#f2e496 cterm=bold ctermfg=222
 elseif &background == "light"
-    hi Normal guibg=white guifg=#333333  ctermbg=white ctermfg=black
+    hi Normal guibg=white guifg=#333333 ctermbg=white ctermfg=black
 
     hi DiffAdd guibg=#e6ffed guifg=#22863a ctermbg=85 ctermfg=29
     hi DiffChange guibg=#fffbdd ctermbg=230
@@ -175,13 +175,14 @@ if italic_supported == 1
     hi String gui=bold,italic cterm=bold,italic
 endif
 
-hi Visual guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
+hi Visual guibg=#e7da86 guifg=#333333 ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
 hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi IncSearch gui=bold cterm=bold
 hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 hi ColorColumn guibg=grey
-hi TelescopeSelection gui=bold guibg=#e7da86 guifg=#333333 cterm=bold ctermbg=184 ctermfg=black
+" hi TelescopeSelection gui=bold guibg=#e7da86 guifg=#333333 cterm=bold ctermbg=184 ctermfg=black
+hi TelescopeSelection gui=bold cterm=bold
 
 hi SpecialKey gui=bold cterm=bold
 hi MoreMsg gui=bold cterm=bold
