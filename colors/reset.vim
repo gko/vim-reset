@@ -249,5 +249,6 @@ hi! Cursor gui=reverse cterm=reverse
 
 " {{{ Language specific
     hi rustKeyword gui=bold cterm=bold
+    hi rustMacro gui=bold cterm=bold
     hi typescriptParens guibg=NONE ctermbg=NONE
 " }}}
