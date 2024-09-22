@@ -13,6 +13,7 @@
 
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 hi clear
 if exists("syntax_on")
     syntax reset
@@ -28,8 +29,8 @@ let s:italic_supported = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') 
         hi @variable gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
         hi @lsp gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     endif
-    hi Char gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi Boolean gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi Char gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -148,6 +149,7 @@ let s:italic_supported = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') 
 " }}}
 
 if &background == "dark"
+    hi! Cursor guifg=black ctermfg=black
     hi Normal guibg=black guifg=#e3dede  ctermbg=black ctermfg=white
 
     hi DiffAdd guibg=#22863a guifg=white ctermbg=29 ctermfg=15
@@ -155,6 +157,7 @@ if &background == "dark"
     hi DiffDelete guibg=#7d2a2f guifg=white ctermbg=52 ctermfg=15
     hi DiffText gui=bold guifg=#f2e496 cterm=bold ctermfg=222
 elseif &background == "light"
+    hi Cursor guifg=white ctermfg=white
     hi Normal guibg=white guifg=#333333 ctermbg=white ctermfg=black
 
     hi DiffAdd guibg=#e6ffed guifg=#22863a ctermbg=85 ctermfg=29
@@ -163,21 +166,17 @@ elseif &background == "light"
     hi DiffText gui=bold guibg=#f2e496 cterm=bold ctermbg=222
 endif
 
-hi link diffAdded DiffAdd
-hi link diffRemoved DiffDelete
-
 hi Comment guifg=grey ctermfg=grey
-hi String gui=bold cterm=bold
 if s:italic_supported == 1
+    hi Boolean gui=italic cterm=italic
     hi Comment gui=italic cterm=italic
     hi String gui=italic cterm=italic
-    hi Boolean gui=italic cterm=italic
 endif
 
 hi Visual guibg=#e7da86 guifg=#333333 ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
 hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
-hi IncSearch gui=bold cterm=bold
+hi IncSearch guibg=yellow guifg=#333333 ctermbg=yellow ctermfg=black gui=bold cterm=bold
 hi Search guibg=yellow guifg=#333333 ctermbg=yellow ctermfg=black
 hi CurSearch gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 hi ColorColumn guibg=grey
@@ -195,9 +194,7 @@ hi StatusLineNC gui=reverse cterm=reverse
 
 hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
-" also FZF color
 hi NormalFloat gui=reverse cterm=reverse
-hi FloatBorder guibg=white
 hi TelescopeNormal gui=reverse cterm=reverse
 " https://vi.stackexchange.com/a/12665
 hi Pmenu gui=reverse cterm=reverse
@@ -205,16 +202,13 @@ hi PmenuSel gui=bold,reverse cterm=bold,reverse
 hi PmenuSbar gui=reverse cterm=reverse
 hi PmenuThumb guibg=grey ctermbg=grey
 
-hi link CocMenuSel PmenuSel
-hi link CocFloatSbar PmenuSbar
-hi link CocFloatThumb PmenuThumb
-
 hi DiagnosticFloatingOk gui=standout cterm=standout
 hi DiagnosticFloatingInfo gui=standout cterm=standout
 hi DiagnosticFloatingHint gui=standout cterm=standout
 hi DiagnosticFloatingWarn gui=standout cterm=standout
 hi DiagnosticFloatingError gui=standout cterm=standout
 
+hi! link NonText Normal
 hi NonText gui=bold cterm=bold
 hi Title gui=bold cterm=bold
 hi WarningMsg gui=standout cterm=standout
@@ -224,6 +218,7 @@ hi Folded gui=standout cterm=standout
 
 hi Conditional gui=bold cterm=bold
 hi Keyword gui=bold cterm=bold
+
 hi Special gui=bold cterm=bold
 hi Statement gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
@@ -233,6 +228,26 @@ hi Todo gui=bold,standout cterm=bold,standout
 hi MatchParen gui=bold cterm=bold
 hi Directory gui=bold cterm=bold
 
+" {{{ Links
+    hi! link Cursor Normal
+    hi! link TermCursor Cursor
+
+    hi! link diffAdded DiffAdd
+    hi! link diffRemoved DiffDelete
+
+    hi! link CocMenuSel PmenuSel
+    hi! link CocFloatSbar PmenuSbar
+    hi! link CocFloatThumb PmenuThumb
+
+    hi! link vimHiAttrib Statement
+
+    hi! link CocMenuSel PmenuSel
+    hi! link CocFloatSbar PmenuSbar
+    hi! link CocFloatThumb PmenuThumb
+" }}}
+hi! Cursor gui=reverse cterm=reverse
+
 " {{{ Language specific
     hi rustKeyword gui=bold cterm=bold
+    hi typescriptParens guibg=NONE ctermbg=NONE
 " }}}
