@@ -221,6 +221,7 @@ hi Keyword gui=bold cterm=bold
 
 hi Special gui=bold cterm=bold
 hi Statement gui=bold cterm=bold
+hi Function gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
 hi ErrorMsg gui=reverse cterm=reverse
 hi Error gui=reverse cterm=reverse
