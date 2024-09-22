@@ -19,11 +19,8 @@ if exists("syntax_on")
 endif
 
 let g:colors_name = 'reset'
-let italic_supported = 0
 
-if has("nvim") || &t_ZH == "\e[3m"
-    let italic_supported = 1
-endif
+let s:italic_supported = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')
 
 " help highlight-groups
 " {{{ Reset
@@ -32,6 +29,7 @@ endif
         hi @lsp gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     endif
     hi Char gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
+    hi Boolean gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbr gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbrDefault gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
     hi CmpItemAbbrDeprecated gui=NONE guibg=NONE guifg=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
@@ -170,16 +168,18 @@ hi link diffRemoved DiffDelete
 
 hi Comment guifg=grey ctermfg=grey
 hi String gui=bold cterm=bold
-if italic_supported == 1
+if s:italic_supported == 1
     hi Comment gui=italic cterm=italic
-    hi String gui=bold,italic cterm=bold,italic
+    hi String gui=italic cterm=italic
+    hi Boolean gui=italic cterm=italic
 endif
 
 hi Visual guibg=#e7da86 guifg=#333333 ctermbg=184 ctermfg=black
 hi VisualNOS gui=bold guifg=#333333 cterm=bold ctermfg=black
 hi QuickFixLine guibg=#e7da86 guifg=#333333  ctermbg=184 ctermfg=black
 hi IncSearch gui=bold cterm=bold
-hi Search gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
+hi Search guibg=yellow guifg=#333333 ctermbg=yellow ctermfg=black
+hi CurSearch gui=bold guibg=yellow guifg=#333333 cterm=bold ctermbg=yellow ctermfg=black
 hi ColorColumn guibg=grey
 " hi TelescopeSelection gui=bold guibg=#e7da86 guifg=#333333 cterm=bold ctermbg=184 ctermfg=black
 hi TelescopeSelection gui=bold cterm=bold
@@ -195,7 +195,9 @@ hi StatusLineNC gui=reverse cterm=reverse
 
 hi TabLineSel gui=bold,reverse cterm=bold,reverse
 
+" also FZF color
 hi NormalFloat gui=reverse cterm=reverse
+hi FloatBorder guibg=white
 hi TelescopeNormal gui=reverse cterm=reverse
 " https://vi.stackexchange.com/a/12665
 hi Pmenu gui=reverse cterm=reverse
@@ -220,8 +222,9 @@ hi WildMenu gui=standout cterm=standout
 hi Folded gui=standout cterm=standout
 " hi FoldColumn gui=standout cterm=standout
 
-hi Type gui=bold cterm=bold
-hi Operator gui=bold cterm=bold
+hi Conditional gui=bold cterm=bold
+hi Keyword gui=bold cterm=bold
+hi Special gui=bold cterm=bold
 hi Statement gui=bold cterm=bold
 hi Ignore gui=bold cterm=bold
 hi ErrorMsg gui=reverse cterm=reverse
